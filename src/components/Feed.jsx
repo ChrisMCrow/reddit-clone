@@ -10,6 +10,7 @@ function Feed(props) {
           onUpVote={props.onUpVote}
           onDownVote={props.onDownVote}
           post={post}
+          onComment={props.onComment}
           key={post.id}
         />
       ))}
@@ -18,7 +19,8 @@ function Feed(props) {
 }
 
 Feed.propType = {
-  postList: PropTypes.array
+  postList: PropTypes.array,
+  onComment: PropTypes.func
 };
 
 

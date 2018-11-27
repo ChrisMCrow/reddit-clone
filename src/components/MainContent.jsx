@@ -46,6 +46,7 @@ class MainContent extends React.Component {
     this.handleNewPost = this.handleNewPost.bind(this);
     this.handleUpVote = this.handleUpVote.bind(this);
     this.handleDownVote = this.handleDownVote.bind(this);
+    this.handleComment = this.handleComment.bind(this);
   }
 
   handleNewPost(newPost){
@@ -67,6 +68,7 @@ class MainContent extends React.Component {
   }
 
   handleDownVote(post, comment) {
+    console.log(this);
     let newMasterPostList = this.state.masterPostList.slice();
     let postIndex = this.state.masterPostList.indexOf(post);
     if (comment) {
@@ -75,6 +77,14 @@ class MainContent extends React.Component {
     } else {
       newMasterPostList[postIndex].votes--;
     }
+    this.setState({masterPostList: newMasterPostList});
+  }
+
+  handleComment(post, comment) {
+
+    let newMasterPostList = this.state.masterPostList.slice();
+    let postIndex = this.state.masterPostList.indexOf(post);
+    newMasterPostList[postIndex].comments.push(comment);
     this.setState({masterPostList: newMasterPostList});
   }
 
@@ -93,6 +103,7 @@ class MainContent extends React.Component {
             postList = {this.state.masterPostList}
             onUpVote = {this.handleUpVote}
             onDownVote = {this.handleDownVote}
+            onComment = {this.handleComment}
           />
         </div>
         <div className='col-md-3'>
