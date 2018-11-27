@@ -1,11 +1,6 @@
 import React from 'react';
-//import PropTypes from 'prop-types';
-import { Switch, Route } from 'react-router-dom';
-
-/*
-  import { Link } from 'react-router-dom';
-  <Link to="/">Home</Link> | <Link to="/newticket">Create Ticket</Link>
-*/
+import Navbar from './Navbar';
+import MainContent from './MainContent';
 
 function App(){
   var styles = {
@@ -15,15 +10,10 @@ function App(){
       <style jsx>{`
         font-family: Helvetica;
       `}</style>
-      redditClone
-      {/* <Switch>
-        <Route exact path='/' component={} />
-      </Switch> */}
+      <Navbar/>
+      <MainContent/>
     </div>
   );
 }
-
-//App.propTypes = {
-//};
 
 export default App;
