@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 function Feed(props) {
   return (
     <div>
-      {props.postList.map((post) => (
+      {props.postList.sort((a,b) => b.votes - a.votes).map((post) => (
         <Post
           onUpVote={props.onUpVote}
           onDownVote={props.onDownVote}

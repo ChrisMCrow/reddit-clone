@@ -64,7 +64,7 @@ function Post(props) {
         />
         <button className='btn btn-primary'>Comment</button>
       </form>
-      {props.post.comments.map((comment) => 
+      {props.post.comments.sort((a,b) => b.votes - a.votes).map((comment) => 
         <Comment
           onUpVote={props.onUpVote}
           onDownVote={props.onDownVote}
