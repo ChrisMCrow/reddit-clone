@@ -2,6 +2,8 @@ import React from 'react';
 import Comment from './Comment';
 import PropTypes from 'prop-types';
 import { v4 } from 'uuid';
+import Moment from 'moment';
+
 
 
 function Post(props) {
@@ -50,6 +52,7 @@ function Post(props) {
         }
       `}</style>
       <h4>{props.post.username}</h4>
+      {/* <h6>{displayTimeOpen(props.timeOpen)}</h6> */}
       <p>{props.post.postContent}</p>
       <h5>
         <img onClick={handleUpVoteClick} className='arrow' src="https://img.icons8.com/ios-glyphs/50/000000/up.png" />

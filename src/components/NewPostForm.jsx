@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { v4 } from 'uuid';
+import Moment from 'moment';
 
 function NewPostForm(props){
   let _post = null;
@@ -13,7 +14,8 @@ function NewPostForm(props){
       postContent: _post.value,
       votes: 0,
       comments: [],
-      id: v4()
+      id: v4(), 
+      timeOpen: new Moment()
     });
     _post.value = '';
   }
