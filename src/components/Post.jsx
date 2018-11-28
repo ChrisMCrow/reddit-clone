@@ -27,7 +27,7 @@ function Post(props) {
       id: v4()
     });
     _comment.value = '';
-  }
+  } 
   
   return (
     <div className = 'post-container'>
@@ -52,7 +52,6 @@ function Post(props) {
         }
       `}</style>
       <h4>{props.post.username}</h4>
-      {/* <h6>{displayTimeOpen(props.timeOpen)}</h6> */}
       <p>{props.post.postContent}</p>
       <h5>
         <img onClick={handleUpVoteClick} className='arrow' src="https://img.icons8.com/ios-glyphs/50/000000/up.png" />
